@@ -21,6 +21,7 @@ import { TablaActoresComponent } from './componentes/tabla-actores/tabla-actores
 import { ListadoPeliculasComponent } from './componentes/listado-peliculas/listado-peliculas.component';
 import { DetalleActorComponent } from './componentes/detalle-actor/detalle-actor.component';
 import { DetallePaisComponent } from './componentes/detalle-pais/detalle-pais.component';
+import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { DetallePaisComponent } from './componentes/detalle-pais/detalle-pais.co
     TablaActoresComponent,
     ListadoPeliculasComponent,
     DetalleActorComponent,
-    DetallePaisComponent
+    DetallePaisComponent,
+    BienvenidoComponent
   ],
   imports: [
     BrowserModule,
