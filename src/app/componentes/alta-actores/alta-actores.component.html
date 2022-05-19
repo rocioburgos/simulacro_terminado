@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="py-5 text-center"> 
+      <h2>Alta usuario</h2>
+      <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+    </div>
+  
+    <div class="alert alert-success" role="alert" *ngIf="registroOk">
+      Se guardo el actor con exito!
+     </div>
+     <div class="alert alert-danger" role="alert" *ngIf="registroOk== false">
+       No se pudo guardar el actor
+     </div>
+    <div class="row">
+      <div class="col-md-5 order-md-2 mb-4"> 
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-muted">Pais</span> 
+        </h4> 
+        <div class="col-md-10 mb-3"> 
+            <app-tabla-paises (eventoPaisSeleccionado)="capturarPaisSeleccionado($event)"></app-tabla-paises> 
+        </div> 
+      </div>
+
+ 
+      <div class="col-md-7 order-md-1">
+        
+        <h4 class="mb-3">Datos actor</h4>
+        <form class="needs-validation" [formGroup]='formulario' method="post" (ngSubmit)="onRegistro()" >
+          <div class="row">
+              
+            <div class="col-md-6 mb-3">
+              <label for="firstName">Nombre</label>
+              <input formControlName='nombre' type="text" class="form-control" id="firstName" > 
+              <small id="nombre1" class="form-text text-muted"
+              *ngIf="formulario.get('nombre')?.hasError('required') && formulario.get('nombre')?.touched">El nombre es
+              requerido.</small>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Apellido</label>
+              <input formControlName='apellido' type="text" class="form-control" id="lastName" > 
+              <small id="nombre1" class="form-text text-muted"
+              *ngIf="formulario.get('apellido')?.hasError('required') && formulario.get('apellido')?.touched">El apellido es
+              requerido.</small>
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="username">Username</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+              </div>
+              <input  formControlName='username' type="text" class="form-control"  id="username" > 
+              <small id="nombre1" class="form-text text-muted"
+              *ngIf="formulario.get('username')?.hasError('required') && formulario.get('username')?.touched">El username es
+              requerido.</small>
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="email">Email </label>
+            <input formControlName='email' type="text" class="form-control" id="email"   >
+            <small id="nombre1" class="form-text text-muted"
+            *ngIf="formulario.get('email')?.hasError('required') && formulario.get('email')?.touched">El email es
+            requerido.</small>
+ 
+          </div> 
+          <hr class="mb-4"> 
+          <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="formulario.invalid  ">Dar de alta</button>
+          
+        </form>
+      </div>
+    </div>
+ 
+  </div>

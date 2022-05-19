@@ -1,0 +1,15 @@
+ 
+
+  <div style="overflow-y: scroll; height: 200px;">
+    <ul class="list-group mb-3" *ngFor="let pais of listadoPaises">
+      <li class="list-group-item d-flex justify-content-between lh-condensed"
+      (click)="enviarEventoPaisSeleccionado(pais)">
+        <div style="display: flex; cursor: pointer;">
+          <h6 class="my-0">{{pais.translations.spa.common}}</h6>
+          <img src="{{pais.flags.png}}" style="width: 35px; height: 25px; padding: 5px;">
+        </div>
+      </li>
+    </ul>
+  </div>
+  <br>
+  <h5>pais elegido: {{paisElegido }} </h5>

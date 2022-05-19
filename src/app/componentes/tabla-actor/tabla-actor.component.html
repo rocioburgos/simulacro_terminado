@@ -1,0 +1,8 @@
+ 
+<ul>
+    <li *ngFor="let actor of listadoActores" style="width: 300px; justify-content: space-between; padding: 15px;">
+        <span style="margin-right: 50px;">{{actor.nombre}}</span> 
+        <button class="btn btn-dark" (click)="elegido(actor)">Seleccionar</button>
+      </li>
+</ul>
+<p>Actor elegido:{{actorElegido}} </p>

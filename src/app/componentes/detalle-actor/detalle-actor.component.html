@@ -1,0 +1,8 @@
+<div *ngIf="actor!= null">
+    <p>Nombre: {{actor.nombre}} </p>
+    <p>Apellido: {{actor.apellido}} </p>
+    <p>username: {{actor.username}} </p>
+    <p>Email: {{actor.email}} </p>
+    <p>Pais: {{actor.pais.nombre}}<span><button (click)="clickDetallePais(actor.pais)" >Ver detalle</button></span> </p> 
+ 
+</div>

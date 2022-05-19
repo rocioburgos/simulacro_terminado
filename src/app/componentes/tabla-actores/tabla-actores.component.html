@@ -1,0 +1,7 @@
+<ul>
+    <li *ngFor="let actor of listadoActores"  >
+        <span style="margin-right: 50px;">{{actor.nombre}}</span> 
+        <button class="btn btn-dark" (click)="peliculas(actor)">Ver peliculas</button>
+        <button class="btn btn-dark" (click)="detalle(actor)">Mostrar detalle</button>
+      </li>
+</ul> 

@@ -1,0 +1,28 @@
+<div class="container py-4">
+ 
+
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Listado de Actores</h1>
+        <app-tabla-actores (onActorElegido_peliculas)="capturarActorElegido_peliculas($event)"
+        (onActorElegido_detalle)="capturarActorElegido_detalle($event)"></app-tabla-actores>
+    </div>
+    </div>
+
+    <div class="row align-items-md-stretch">
+      <div class="col-md-4">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+           <app-listado-peliculas></app-listado-peliculas>
+        </div>
+      </div> 
+      <div class="col-md-4">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+           <app-detalle-actor [actor]="actorElegido_DetalleActor" (onPaisSeleccionado)="capturarPaisSeleccionado($event)"></app-detalle-actor>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+           <app-detalle-pais [pais]="paisSeleccionado_detalle"></app-detalle-pais>
+        </div>
+      </div>
+    </div>

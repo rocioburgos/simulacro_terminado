@@ -1,0 +1,10 @@
+<ul  >
+    <li  *ngFor="let pelicula of peliculas" style="width: 300px; justify-content: space-between; padding: 15px;">
+     
+        <img   width="80px" [src]="pelicula.fotoPelicula" >
+        <span  >{{pelicula.Nombre}}</span>
+        <button type="button" class=" btn btn-info btn-circle" (click)="peliculaSeleccionada(pelicula)" >Detalle
+        </button>
+   
+    </li>
+  </ul> 
